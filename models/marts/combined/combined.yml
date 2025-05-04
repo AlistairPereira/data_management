@@ -1,0 +1,48 @@
+# models/marts/combined/combined.yml
+
+version: 2
+
+models:
+  - name: flight_combined
+    description: >
+      Joins flight state information with estimated arrival/departure airport details.
+    columns:
+      - name: icao24
+        description: Aircraft unique identifier
+      - name: callsign
+        description: Aircraft callsign
+      - name: estArrivalAirport
+        description: Estimated arrival airport
+      - name: estDepartureAirport
+        description: Estimated departure airport
+      - name: ingestion_time
+        description: Data timestamp
+
+  - name: flight_full_model
+    description: >
+      Final enriched model that combines aircraft states, estimated data, and historic flight schedules.
+    columns:
+      - name: icao24
+        description: Aircraft unique identifier
+      - name: callsign
+        description: Aircraft callsign
+      - name: origin_country
+        description: Country of aircraft origin
+      - name: estArrivalAirport
+        description: Estimated arrival airport
+      - name: estDepartureAirport
+        description: Estimated departure airport
+      - name: FlightDate
+        description: Date of the flight
+      - name: Marketing_Airline_Network
+        description: Marketing airline code
+      - name: Origin
+        description: Origin airport
+      - name: Dest
+        description: Destination airport
+      - name: dep_delay
+        description: Departure delay in minutes
+      - name: arr_delay
+        description: Arrival delay in minutes
+      - name: air_time
+        description: Time in air (minutes)

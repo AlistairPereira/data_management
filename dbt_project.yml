@@ -19,9 +19,9 @@ clean-targets:
 models:
   opensky_dbt_project:
     staging:
-      +materialized: view
+      +materialized: table
     marts:
       combined:
         +materialized: table
       analysis:
-        +materialized: view
+        +materialized: table
