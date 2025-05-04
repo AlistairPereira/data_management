@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_flight_data
+    description: >
+      Cleaned and standardized data from flight_data_staging_new.
+    columns:
+      - name: icao24
+        description: Aircraft ID
+      - name: estArrivalAirport
+        description: Estimated arrival airport
+      - name: first_seen
+        description: Timestamp aircraft was first seen
+
+  - name: stg_flight_states
+    description: >
+      Real-time aircraft position and velocity data.
+    columns:
+      - name: icao24
+        description: Aircraft ID
+      - name: callsign
+        description: Aircraft callsign
+      - name: velocity
+        description: Ground speed of the aircraft
+
+  - name: stg_flights_historic
+    description: >
+      Historic scheduled flight data with airline, origin/destination, and delays.
+    columns:
+      - name: FlightDate
+        description: Date of flight
+      - name: Marketing_Airline_Network
+        description: Airline marketing code
+      - name: dep_delay
+        description: Departure delay in minutes
